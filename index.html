@@ -8,6 +8,33 @@
  .hint{line-height:1.7;padding:0 12px}
 }
  .mobile-map-tip{display:none}@media(max-width:680px){.mobile-map-tip{display:inline}}
+
+/* 手机端：可点击地点显示复古小路牌；桌面端维持悬停显示 */
+@media(max-width:680px){
+ .map-scroll .hotspot span{
+  opacity:1;pointer-events:none;
+  bottom:calc(100% + 4px);
+  padding:5px 9px;
+  border:1px solid #9eacb7;
+  border-radius:4px;
+  background:#f8f0dff2;
+  color:#344b61;
+  box-shadow:0 2px 6px #22334430;
+  font-size:12px;
+  letter-spacing:.04em;
+  z-index:2;
+ }
+ /* 小屋与邮局相邻：小屋标签放在点击区域下方，避免两张路牌重叠 */
+ .map-scroll .hotspot[href="cottage.html"] span{bottom:auto;top:calc(100% + 4px)}
+ .map-scroll .journal-link::after{
+  content:'✧ 旅行手帐';position:absolute;right:0;bottom:calc(100% + 3px);
+  white-space:nowrap;pointer-events:none;
+  padding:5px 9px;border:1px solid #9eacb7;border-radius:4px;
+  background:#f8f0dff2;color:#344b61;
+  box-shadow:0 2px 6px #22334430;font-size:12px;
+  letter-spacing:.04em;transform:rotate(-5deg);
+ }
+}
 </style></head><body><header><a href="index.html">WINTERLAND</a><p>只在冬天开放的小镇</p></header><p class="hint">点击地图中的房子，进入不同地点；点击右下角的手账查看日程<span class="mobile-map-tip"> · 左右滑动探索小镇</span></p><main class="map-wrap"><div class="map-scroll" id="map-scroll"><div class="map"><img src="images/winterland-map.png" alt="WINTERLAND 冬日小镇手绘地图"><a class="hotspot" href="post-office.html" aria-label="进入小镇邮局" style="left:8.5%;top:34.5%;width:22%;height:23%"><span>小镇邮局</span></a>
 <a class="hotspot" href="cafe.html" aria-label="进入冬日咖啡馆" style="left:34.3%;top:42.0%;width:23%;height:22%"><span>冬日咖啡馆</span></a>
 <a class="hotspot" href="club.html" aria-label="进入冬日俱乐部" style="left:62.7%;top:47.5%;width:23%;height:24%"><span>冬日俱乐部</span></a>
