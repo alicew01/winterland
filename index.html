@@ -24,8 +24,9 @@
   letter-spacing:.04em;
   z-index:2;
  }
- /* 小屋与邮局相邻：小屋标签放在点击区域下方，避免两张路牌重叠 */
- .map-scroll .hotspot[href="cottage.html"] span{bottom:auto;top:calc(100% + 4px)}
+ /* 小屋在上方、邮局在下方：手机路牌各自贴近对应建筑，避免视觉对调 */
+ .map-scroll .hotspot[href="cottage.html"] span{bottom:calc(100% + 4px);top:auto}
+ .map-scroll .hotspot[href="post-office.html"] span{bottom:auto;top:calc(100% + 4px)}
  .map-scroll .journal-link::after{
   content:'✧ 手帐';position:absolute;right:0;bottom:calc(100% + 3px);
   white-space:nowrap;pointer-events:none;
